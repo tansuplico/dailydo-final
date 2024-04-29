@@ -89,7 +89,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     });
 
     res.cookie("token", token, {
-      httpOnly: true,
+      httpOnly: false,
     });
 
     return res.status(201).json({ message: "User successfully created" });
@@ -125,7 +125,7 @@ export const loginUser = asyncHandler(async (req, res) => {
         { expiresIn: "365d" }
       );
 
-      const verificationLink = `http://localhost:3000/verify-email?token=${verificationToken}`;
+      const verificationLink = `https://dailydo-0bc4.onrender.com/verify-email?token=${verificationToken}`;
 
       const transporter = createTransport({
         service: "gmail",
@@ -170,7 +170,7 @@ export const loginUser = asyncHandler(async (req, res) => {
         { expiresIn: "365d" }
       );
 
-      res.cookie("token", cookieToken, { httpOnly: true });
+      res.cookie("token", cookieToken, { httpOnly: false });
 
       return res.status(200).json({ message: "Cookie set successfully" });
     }
@@ -241,7 +241,7 @@ export const checkVerification = asyncHandler(async (req, res) => {
       });
 
       res.cookie("token", cookieToken, {
-        httpOnly: true,
+        httpOnly: false,
       });
 
       return res.status(200).json({ user });
@@ -277,7 +277,7 @@ export const checkIfAuthenticated = asyncHandler(async (req, res) => {
 
 export const logoutUser = asyncHandler(async (req, res) => {
   try {
-    res.clearCookie("token", { httpOnly: true, sameSite: "strict" });
+    res.clearCookie("token", { httpOnly: false, sameSite: "strict" });
     res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
     res.status(500).json({ message: `A server error has occured: ${error}` });
@@ -322,7 +322,7 @@ export const forgotPassword = asyncHandler(async (req, res) => {
     user.verificationToken = resetToken;
     await user.save();
 
-    const verificationLink = `http://localhost:3000/change-password?token=${resetToken}&user=${user._id}`;
+    const verificationLink = `https://dailydo-0bc4.onrender.com/change-password?token=${resetToken}&user=${user._id}`;
     const transporter = createTransport({
       service: "gmail",
       host: "smtp.gmail.com",

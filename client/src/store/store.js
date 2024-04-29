@@ -129,7 +129,7 @@ export const useNotesListStore = create((set) => ({
     set((state) => {
       try {
         axios.post(
-          `http://localhost:3000/api/notes/${state.noteSelected}/content-change`,
+          `https://dailydo-0bc4.onrender.com/api/notes/${state.noteSelected}/content-change`,
           { content: content },
           { withCredentials: true }
         );
@@ -153,7 +153,7 @@ export const useNotesListStore = create((set) => ({
 
       axios
         .post(
-          `http://localhost:3000/api/notes/add-note`,
+          `https://dailydo-0bc4.onrender.com/api/notes/add-note`,
           { newNoteFormat },
           { withCredentials: true }
         )
@@ -173,7 +173,7 @@ export const useNotesListStore = create((set) => ({
     set((state) => {
       axios
         .post(
-          `http://localhost:3000/api/notes/${state.noteSelected}/trash-note`,
+          `https://dailydo-0bc4.onrender.com/api/notes/${state.noteSelected}/trash-note`,
           { soloId: id },
           { withCredentials: true }
         )
@@ -196,7 +196,7 @@ export const useNotesListStore = create((set) => ({
     set((state) => {
       axios
         .post(
-          `http://localhost:3000/api/notes/${state.noteSelected}/favorite-note`,
+          `https://dailydo-0bc4.onrender.com/api/notes/${state.noteSelected}/favorite-note`,
           { soloId: id },
           { withCredentials: true }
         )
@@ -216,7 +216,7 @@ export const useNotesListStore = create((set) => ({
   handleSortNoteTitle: () => {
     axios
       .patch(
-        `http://localhost:3000/api/notes/sort-name-note`,
+        `https://dailydo-0bc4.onrender.com/api/notes/sort-name-note`,
         {},
         { withCredentials: true }
       )
@@ -233,7 +233,7 @@ export const useNotesListStore = create((set) => ({
   handleSortNoteDate: () => {
     axios
       .patch(
-        `http://localhost:3000/api/notes/sort-date-note`,
+        `https://dailydo-0bc4.onrender.com/api/notes/sort-date-note`,
         {},
         { withCredentials: true }
       )
@@ -722,7 +722,7 @@ export const useTaskListStore = create((set) => ({
 
     axios
       .post(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/add-toDo-task`,
         { taskFormat },
@@ -749,7 +749,7 @@ export const useTaskListStore = create((set) => ({
 
     axios
       .post(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/add-doing-task`,
         { taskFormat },
@@ -776,7 +776,7 @@ export const useTaskListStore = create((set) => ({
 
     axios
       .post(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/add-done-task`,
         { taskFormat },
@@ -796,7 +796,7 @@ export const useTaskListStore = create((set) => ({
   handleDeleteTask: (id, taskType) => {
     axios
       .delete(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/delete-task`,
         { data: { nestedTaskId: id, type: taskType }, withCredentials: true }
@@ -814,7 +814,7 @@ export const useTaskListStore = create((set) => ({
   handleDuplicateTask: (index, taskType) => {
     axios
       .post(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/duplicate-task`,
         { taskIndex: index, type: taskType },
@@ -836,7 +836,7 @@ export const useTaskListStore = create((set) => ({
   handleIsImportant: (id, taskType) => {
     axios
       .patch(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/important-task`,
         {
@@ -861,7 +861,7 @@ export const useTaskListStore = create((set) => ({
   handleClearTask: (id, taskType) => {
     axios
       .patch(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/clear-task`,
         {
@@ -886,7 +886,7 @@ export const useTaskListStore = create((set) => ({
   handleMoveTask: (id, taskType) => {
     axios
       .post(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/move-task`,
         { soloId: id, type: taskType },
@@ -905,7 +905,7 @@ export const useTaskListStore = create((set) => ({
   handleClearWholeTask: (taskToClear) => {
     axios
       .put(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/clear-whole-task/`,
         { taskType: taskToClear },
@@ -927,7 +927,7 @@ export const useTaskListStore = create((set) => ({
   handleSortTaskDate: (type) => {
     axios
       .put(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/sort-task-date`,
         { taskType: type },
@@ -946,7 +946,7 @@ export const useTaskListStore = create((set) => ({
   handleSortTaskName: (type) => {
     axios
       .put(
-        `http://localhost:3000/api/tasks-list/${
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${
           useTaskListGroup.getState().groupedTaskSelected
         }/sort-task-name`,
         { taskType: type },
@@ -1020,7 +1020,7 @@ export const useTaskListGroup = create((set) => ({
 
       axios
         .post(
-          `http://localhost:3000/api/tasks-list/add-new-group`,
+          `https://dailydo-0bc4.onrender.com/api/tasks-list/add-new-group`,
           { groupFormat },
           { withCredentials: true }
         )
@@ -1045,10 +1045,13 @@ export const useTaskListGroup = create((set) => ({
       const findGroup = state.groupedTaskList.find((d) => d.id === id);
 
       axios
-        .delete("http://localhost:3000/api/tasks-list/delete-group", {
-          data: { taskGroupId: findGroup.id },
-          withCredentials: true,
-        })
+        .delete(
+          "https://dailydo-0bc4.onrender.com/api/tasks-list/delete-group",
+          {
+            data: { taskGroupId: findGroup.id },
+            withCredentials: true,
+          }
+        )
         .then(() => {
           set((state) => ({
             fetchGroup: !state.fetchGroup,
@@ -1065,7 +1068,7 @@ export const useTaskListGroup = create((set) => ({
   handleSortingLength: () => {
     axios
       .put(
-        `http://localhost:3000/api/tasks-list/sort-group-amountTask`,
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/sort-group-amountTask`,
         {},
         { withCredentials: true }
       )
@@ -1082,7 +1085,7 @@ export const useTaskListGroup = create((set) => ({
   handleSortingTitle: () => {
     axios
       .put(
-        `http://localhost:3000/api/tasks-list/sort-group-title`,
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/sort-group-title`,
         {},
         { withCredentials: true }
       )
@@ -1185,7 +1188,7 @@ export const useTrashListStore = create((set) => ({
     set((state) => {
       axios
         .delete(
-          `http://localhost:3000/api/trash-list/${state.trashSelected}/delete-trash`,
+          `https://dailydo-0bc4.onrender.com/api/trash-list/${state.trashSelected}/delete-trash`,
           { withCredentials: true }
         )
         .then(() => {
@@ -1208,7 +1211,7 @@ export const useTrashListStore = create((set) => ({
     set((state) => {
       axios
         .put(
-          `http://localhost:3000/api/trash-list/${state.trashSelected}/recover-trash`,
+          `https://dailydo-0bc4.onrender.com/api/trash-list/${state.trashSelected}/recover-trash`,
           {},
           { withCredentials: true }
         )
@@ -1230,7 +1233,7 @@ export const useTrashListStore = create((set) => ({
   handleSortNoteTitle: () => {
     axios
       .patch(
-        `http://localhost:3000/api/trash-list/sort-name-trash`,
+        `https://dailydo-0bc4.onrender.com/api/trash-list/sort-name-trash`,
         {},
         { withCredentials: true }
       )
@@ -1247,7 +1250,7 @@ export const useTrashListStore = create((set) => ({
   handleSortNoteDate: () => {
     axios
       .patch(
-        `http://localhost:3000/api/trash-list/sort-date-trash`,
+        `https://dailydo-0bc4.onrender.com/api/trash-list/sort-date-trash`,
         {},
         { withCredentials: true }
       )

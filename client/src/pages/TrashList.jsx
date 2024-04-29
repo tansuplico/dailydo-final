@@ -90,7 +90,7 @@ const Trashlist = () => {
   const fetchPrivateData = () => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:3000/api/user/private/data`, {
+      .get(`https://dailydo-0bc4.onrender.com/api/user/private/data`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -107,7 +107,7 @@ const Trashlist = () => {
   const fetchData = () => {
     setIsLoading(true);
     axios
-      .get("http://localhost:3000/api/trash-list", {
+      .get("https://dailydo-0bc4.onrender.com/api/trash-list", {
         withCredentials: true,
       })
       .then((res) => {

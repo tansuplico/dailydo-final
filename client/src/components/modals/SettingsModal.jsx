@@ -81,7 +81,7 @@ const SettingsModal = ({ setSettingIsClicked }) => {
 
   const fetchData = () => {
     axios
-      .get(`http://localhost:3000/api/user/private/data`, {
+      .get(`https://dailydo-0bc4.onrender.com/api/user/private/data`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -104,7 +104,7 @@ const SettingsModal = ({ setSettingIsClicked }) => {
 
   const logout = () => {
     axios
-      .post("http://localhost:3000/api/user/logout", null, {
+      .post("https://dailydo-0bc4.onrender.com/api/user/logout", null, {
         withCredentials: true,
       })
       .then(() => {
@@ -119,9 +119,13 @@ const SettingsModal = ({ setSettingIsClicked }) => {
     const formData = new FormData();
     formData.append("file", userImage);
     axios
-      .post("http://localhost:3000/api/user/uploadProfilePic", formData, {
-        withCredentials: true,
-      })
+      .post(
+        "https://dailydo-0bc4.onrender.com/api/user/uploadProfilePic",
+        formData,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         setSettingsFetched((val) => !val);
         const updatedUser = res.data.user;
@@ -144,9 +148,13 @@ const SettingsModal = ({ setSettingIsClicked }) => {
     };
 
     axios
-      .post("http://localhost:3000/api/user/changePassword", passwordData, {
-        withCredentials: true,
-      })
+      .post(
+        "https://dailydo-0bc4.onrender.com/api/user/changePassword",
+        passwordData,
+        {
+          withCredentials: true,
+        }
+      )
       .then(() => {
         setPasswordChanged(true);
         setCurrentPasswordError(false);
@@ -198,7 +206,7 @@ const SettingsModal = ({ setSettingIsClicked }) => {
 
   const deleteAccount = () => {
     axios
-      .delete("http://localhost:3000/api/user/deleteAccount", {
+      .delete("https://dailydo-0bc4.onrender.com/api/user/deleteAccount", {
         withCredentials: true,
       })
       .then(() => {})
@@ -213,7 +221,7 @@ const SettingsModal = ({ setSettingIsClicked }) => {
     setVerificationEnabled(!verificationEnabled);
     axios
       .put(
-        "http://localhost:3000/api/user/toggle-email-verification",
+        "https://dailydo-0bc4.onrender.com/api/user/toggle-email-verification",
         { verificationEnabled: verificationEnabled },
         { withCredentials: true }
       )
@@ -228,7 +236,7 @@ const SettingsModal = ({ setSettingIsClicked }) => {
   const toggleDarkMode = () => {
     axios
       .put(
-        "http://localhost:3000/api/user/dark-mode",
+        "https://dailydo-0bc4.onrender.com/api/user/dark-mode",
         {},
         { withCredentials: true }
       )
@@ -244,7 +252,7 @@ const SettingsModal = ({ setSettingIsClicked }) => {
   const toggleLightMode = () => {
     axios
       .put(
-        "http://localhost:3000/api/user/light-mode",
+        "https://dailydo-0bc4.onrender.com/api/user/light-mode",
         {},
         { withCredentials: true }
       )

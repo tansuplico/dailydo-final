@@ -34,7 +34,6 @@ const Noteslist = () => {
     showSortMenu,
     showSortPosition,
     setShowSortMenu,
-    addNote,
     titleChange,
     falseTitleMode,
     handleTitleMode,
@@ -61,7 +60,6 @@ const Noteslist = () => {
     showSortMenu: state.showSortMenu,
     showSortPosition: state.showSortPosition,
     setShowSortMenu: state.setShowSortMenu,
-    addNote: state.addNote,
     titleChange: state.titleChange,
     selectNote: state.selectNote,
     falseTitleMode: state.falseTitleMode,
@@ -102,7 +100,7 @@ const Noteslist = () => {
   const fetchPrivateData = () => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:3000/api/user/private/data`, {
+      .get(`https://dailydo-0bc4.onrender.com/api/user/private/data`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -123,7 +121,9 @@ const Noteslist = () => {
   const fetchNotesData = () => {
     setIsLoading(true);
     axios
-      .get("http://localhost:3000/api/notes", { withCredentials: true })
+      .get("https://dailydo-0bc4.onrender.com/api/notes", {
+        withCredentials: true,
+      })
       .then((response) => {
         setIsLoading(false);
         const notes = response.data.notes[0].noteList;
@@ -267,12 +267,7 @@ const Noteslist = () => {
                 </div>
 
                 {noteLists.length > 0 && (
-                  <NewNoteButton
-                    noteSelected={noteSelected}
-                    addNote={addNote}
-                    navigate={navigate}
-                    handleNewNote={handleNewNote}
-                  />
+                  <NewNoteButton handleNewNote={handleNewNote} />
                 )}
 
                 {noteLists.length < 1 && (
@@ -341,12 +336,7 @@ const Noteslist = () => {
                     })}
 
                     {noteLists.length > 0 && (
-                      <NewNoteButton
-                        noteSelected={noteSelected}
-                        addNote={addNote}
-                        navigate={navigate}
-                        handleNewNote={handleNewNote}
-                      />
+                      <NewNoteButton handleNewNote={handleNewNote} />
                     )}
                   </div>
 

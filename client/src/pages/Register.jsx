@@ -32,7 +32,7 @@ const Register = () => {
     };
 
     axios
-      .post("http://localhost:3000/api/user/register", userData, {
+      .post("https://dailydo-0bc4.onrender.com/api/user/register", userData, {
         withCredentials: true,
       })
       .then(() => {

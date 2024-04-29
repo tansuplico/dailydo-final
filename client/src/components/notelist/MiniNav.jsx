@@ -9,7 +9,6 @@ import deleteLight from "../../assets/delete-light.png";
 
 const MiniNav = ({
   note,
-
   addedNotfy,
   deletedNotfy,
   addedToTrash,

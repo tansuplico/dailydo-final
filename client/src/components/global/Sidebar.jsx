@@ -103,7 +103,7 @@ const Sidebar = () => {
 
   const fetchData = () => {
     axios
-      .get(`http://localhost:3000/api/user/private/data`, {
+      .get(`https://dailydo-0bc4.onrender.com/api/user/private/data`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -117,7 +117,9 @@ const Sidebar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/notes", { withCredentials: true })
+      .get("https://dailydo-0bc4.onrender.com/api/notes", {
+        withCredentials: true,
+      })
       .then((response) => {
         if (response.data.notes.length > 0) {
           setNoteLists(response.data.notes[0].noteList);
@@ -128,7 +130,9 @@ const Sidebar = () => {
       });
 
     axios
-      .get("http://localhost:3000/api/tasks-list", { withCredentials: true })
+      .get("https://dailydo-0bc4.onrender.com/api/tasks-list", {
+        withCredentials: true,
+      })
       .then((res) => {
         const mappedTaskGroup = res.data.taskGroup[0].taskGroupList;
         setGroupedTaskList(mappedTaskGroup);

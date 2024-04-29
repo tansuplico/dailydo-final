@@ -11,7 +11,7 @@ const VerifyEmail = () => {
       if (token) {
         try {
           await axios.get(
-            `http://localhost:3000/api/user/verify-email?token=${token}`
+            `https://dailydo-0bc4.onrender.com/api/user/verify-email?token=${token}`
           );
         } catch (error) {
           console.error("Error verifying email:", error);

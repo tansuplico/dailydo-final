@@ -14,7 +14,7 @@ const TaskInput = ({
   const handleChangeTask = () => {
     axios
       .patch(
-        `http://localhost:3000/api/tasks-list/${groupedTaskSelected}/change-task`,
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${groupedTaskSelected}/change-task`,
         { taskValue: task.task, soloId: task.id, type: taskType },
         { withCredentials: true }
       )

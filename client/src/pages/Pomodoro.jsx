@@ -67,7 +67,9 @@ const Pomodoro = () => {
   const fetchedData = () => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:3000/api/workspace`, { withCredentials: true })
+      .get(`https://dailydo-0bc4.onrender.com/api/workspace`, {
+        withCredentials: true,
+      })
       .then((res) => {
         setIsLoading(false);
         const isDarkMode = res.data.findUserData.dark;

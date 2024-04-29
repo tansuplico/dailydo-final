@@ -209,7 +209,7 @@ const TasksList = () => {
     const groupData = { taskGroupName: groupSelected.taskGroupName };
     axios
       .post(
-        `http://localhost:3000/api/tasks-list/${groupedTaskSelected}/group-title-change`,
+        `https://dailydo-0bc4.onrender.com/api/tasks-list/${groupedTaskSelected}/group-title-change`,
         groupData,
         { withCredentials: true }
       )
@@ -220,7 +220,7 @@ const TasksList = () => {
   const fetchData = () => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:3000/api/user/private/data`, {
+      .get(`https://dailydo-0bc4.onrender.com/api/user/private/data`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -237,7 +237,7 @@ const TasksList = () => {
   const fetchGroupData = () => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:3000/api/tasks-list`, {
+      .get(`https://dailydo-0bc4.onrender.com/api/tasks-list`, {
         withCredentials: true,
       })
       .then((res) => {

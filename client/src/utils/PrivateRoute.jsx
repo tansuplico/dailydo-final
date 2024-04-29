@@ -9,7 +9,7 @@ const PrivateRoute = () => {
     const checkAuthentication = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/api/user/is-authenticated",
+          "https://dailydo-0bc4.onrender.com/api/user/is-authenticated",
           {
             withCredentials: true,
           }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const NewNoteButton = ({ noteSelected, addNote, navigate, handleNewNote }) => {
+const NewNoteButton = ({ handleNewNote }) => {
   return (
     <div className="flex flex-center py-5 md:py-0 col-span-1">
       <div

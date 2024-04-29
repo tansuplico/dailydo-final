@@ -20,7 +20,7 @@ const __dirname = dirname(__filename);
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://dailydo-0bc4.onrender.com",
     credentials: true,
   })
 );

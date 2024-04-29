@@ -25,7 +25,7 @@ const ForgotPassword = () => {
     const token = urlParams.get("token");
 
     axios
-      .post(`http://localhost:3000/api/user/check-if-expired`, {
+      .post(`https://dailydo-0bc4.onrender.com/api/user/check-if-expired`, {
         userId,
         token,
       })
@@ -49,11 +49,14 @@ const ForgotPassword = () => {
     if (user) {
       try {
         axios
-          .post(`http://localhost:3000/api/user/verify-change-password`, {
-            newPassword: newPassword,
-            reTypePassword: reTypePassword,
-            userToken: user,
-          })
+          .post(
+            `https://dailydo-0bc4.onrender.com/api/user/verify-change-password`,
+            {
+              newPassword: newPassword,
+              reTypePassword: reTypePassword,
+              userToken: user,
+            }
+          )
           .then(() => {
             setPasswordChanged(true);
           })

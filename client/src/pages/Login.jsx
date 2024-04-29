@@ -57,7 +57,7 @@ const Login = () => {
     const userData = { email, password };
 
     axios
-      .post("http://localhost:3000/api/user/login", userData, {
+      .post("https://dailydo-0bc4.onrender.com/api/user/login", userData, {
         withCredentials: true,
       })
       .then((res) => {
@@ -68,7 +68,7 @@ const Login = () => {
           const intervalId = setInterval(async () => {
             try {
               const response = await axios.get(
-                `http://localhost:3000/api/user/check-verification/${userId}`,
+                `https://dailydo-0bc4.onrender.com/api/user/check-verification/${userId}`,
                 { withCredentials: true }
               );
               if (response.data.user) {
@@ -106,7 +106,7 @@ const Login = () => {
     setForgotPasswordEmail("");
 
     axios
-      .post(`http://localhost:3000/api/user/forgot-password`, {
+      .post(`https://dailydo-0bc4.onrender.com/api/user/forgot-password`, {
         email: forgotPasswordEmail,
       })
       .then(() => {
