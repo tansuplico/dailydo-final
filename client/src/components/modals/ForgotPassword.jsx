@@ -14,7 +14,7 @@ const ForgotPassword = ({
 }) => {
   return (
     <div className="fixed inset-0 poppins-regular bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="absolute w-[40%] pb-5 rounded-md bg-white">
+      <div className="absolute w-[90%] md:w-[40%] pb-5 rounded-md bg-white">
         <div className="w-full p-5 bg-[#DE3163] text-white">
           <h1> We'll send an email verification to change your password</h1>
         </div>

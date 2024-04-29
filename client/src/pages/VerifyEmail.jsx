@@ -26,7 +26,7 @@ const VerifyEmail = () => {
     <>
       <VerifiedNav />
       <div className="w-full h-full poppins-regular py-[5rem] flex flex-center">
-        <div className="w-[50%] py-[5rem] bg-white flex flex-col flex-center gap-5 shadow-lg">
+        <div className="w-[95%] md:w-[50%] py-[5rem] bg-white flex flex-col flex-center gap-5 shadow-lg text-center">
           <img src={verifiedCheck} alt="verified-check" />
           <strong className="text-[#DE3163] text-[2rem]">Email Verified</strong>
           <p className="text-center w-[80%]">
